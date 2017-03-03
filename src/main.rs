@@ -47,7 +47,7 @@ pub struct Duck {
     y: f64, //y coordinate of square
     the_color: Color,
     acceleration: f64, //does not change over time for now
-    graphics: [[f64; 2]; 3], //just a triangle for now
+    graphics: [[f64; 2]; 4], //just a triangle for now
     moving_forward: bool, 
     moving_backward: bool, 
     rotating_left: bool, 
@@ -74,7 +74,7 @@ impl Duck {
     let (x, y) = (self.x, self.y);
     let transform = c.transform.trans(x, y).rot_rad(rotation);
 
-    //polygon(get_color(self.the_color), [[0.0, 0.0], [self.square_radius, 0.0], [self.square_radius / 2.0, self.square_radius]], transform, gl);
+    //polygon draws a shape between the points of the third parameter
     polygon(get_color(self.the_color), &self.graphics, transform, gl);
 
   } 
@@ -211,7 +211,8 @@ fn main() {
     y: y,
     the_color: Color::BROWN,
     acceleration: 70.0,
-    graphics: [[-10.0, -8.0], [10.0, 0.0,], [-10.0, 8.0]],
+    //These are points of a polygon
+    graphics: [[10.0, 10.0], [-10.0, 10.0,], [-10.0, -10.0], [10.0, -10.0]],
     moving_forward: false, 
     moving_backward: false, 
     rotating_left: false, 
