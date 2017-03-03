@@ -6,24 +6,27 @@ extern crate opengl_graphics;
 use piston::window::WindowSettings;
 use piston::event_loop::*;
 use piston::input::*;
+use graphics::color as color;
 use glutin_window::GlutinWindow as Window;
 use opengl_graphics::{ GlGraphics, OpenGL };
 
 
 #[derive(Debug, Copy, Clone)]
 enum Color {
- // BROWN,
+    BROWN,
 	GREEN,
 	BLUE,
-	RED
+	RED,
+	TEAL
 }
 
 fn get_color(the_color: Color) -> [f32; 4] {
   	match the_color {
-    //  Color::BROWN => [177.0, 112.0, 49.9]
+        Color::BROWN => color::hex("b16f30"),
   		Color::GREEN => [0.0, 1.0, 0.0, 1.0],
-  		Color::BLUE  => [0.0, 0.0, 1.0, 1.0],
-  		Color::RED   => [1.0, 0.0, 0.0, 1.0]
+  		Color::BLUE  => color::hex("6f9ae8"),
+  		Color::RED   => [1.0, 0.0, 0.0, 1.0],
+  		Color::TEAL   => [0.5, 0.8, 0.8, 1.0]
   	}
 }
 
@@ -206,7 +209,7 @@ fn main() {
     rotation_rate: 2.0,
     x: x,
     y: y,
-    the_color: Color::RED,
+    the_color: Color::BROWN,
     acceleration: 70.0,
     graphics: [[-10.0, -8.0], [10.0, 0.0,], [-10.0, 8.0]],
     moving_forward: false, 
