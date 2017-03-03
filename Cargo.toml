@@ -7,8 +7,8 @@ authors = ["dosmoc <dcesebiond@gmail.com>"]
 name = "duckmomma"
 
 [dependencies]
-piston = "0.25.1"
-piston2d-graphics = "0.17.0"
-pistoncore-glutin_window = "0.30.0"
-piston2d-opengl_graphics = "0.33.0"
-num = "0.1.36"
+piston = "0.31.4"
+piston2d-graphics = "0.21.1"
+pistoncore-glutin_window = "0.35.0"
+piston2d-opengl_graphics = "0.42.1"
+num = "0.1.37"
