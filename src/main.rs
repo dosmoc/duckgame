@@ -10,23 +10,76 @@ use graphics::color as color;
 use glutin_window::GlutinWindow as Window;
 use opengl_graphics::{ GlGraphics, OpenGL };
 
-
 #[derive(Debug, Copy, Clone)]
 enum Color {
-    BROWN,
-	GREEN,
-	BLUE,
-	RED,
-	TEAL
+  BLACK,
+  MEDIUMGRAY,
+  WHITE,
+  CRAYFISH,
+  LIGHTPICKLEPLANT,
+  BROWN,
+  LIGHTBROWN,
+  ORANGE,
+  YELLOW,
+  DARKGREEN,
+  GREEN,
+  SEAFOAM,
+  DARKBLUE,
+  BLUE,
+  LIGHTBLUE,
+  BRIGHTBLUE,
+  DARKGRAY,
+  DARKCRAYFISH,
+  PICKPLANT,
+  PURPLE,
+  LIGHTPURPLE,
+  FLESH,
+  LIGHTGREEN,
+  MINT,
+  MEGABLUE,
+  LIGHTMEGA,
+  GRAY,
+  MARSHYELLOW,
+  PURPLEGRAY,
+  OLIVE,
+  BROWNOLIVE,
+  YELLOWOLIVE,
 }
 
 fn get_color(the_color: Color) -> [f32; 4] {
   	match the_color {
-        Color::BROWN => color::hex("b16f30"),
-  		Color::GREEN => [0.0, 1.0, 0.0, 1.0],
-  		Color::BLUE  => color::hex("6f9ae8"),
-  		Color::RED   => [1.0, 0.0, 0.0, 1.0],
-  		Color::TEAL   => [0.5, 0.8, 0.8, 1.0]
+      Color::BLACK => color::hex("000000"),
+      Color::MEDIUMGRAY => color::hex("cab3ba"),
+      Color::WHITE => color::hex("fefefe"),
+      Color::CRAYFISH => color::hex("c6513d"),
+      Color::LIGHTPICKLEPLANT => color::hex("d78581"),
+      Color::BROWN => color::hex("5b3d15"),
+      Color::LIGHTBROWN => color::hex("b17031"),
+      Color::ORANGE => color::hex("fb9359"),
+      Color::YELLOW => color::hex("f1db5b"),
+      Color::DARKGREEN => color::hex("2c373f"),
+      Color::GREEN => color::hex("70803d"),
+      Color::SEAFOAM => color::hex("c5d077"),
+      Color::DARKBLUE => color::hex("1c2438"),
+      Color::BLUE => color::hex("3d4762"),
+      Color::LIGHTBLUE => color::hex("5b8fd8"),
+      Color::BRIGHTBLUE => color::hex("afdbff"),
+      Color::DARKGRAY => color::hex("736561"),
+      Color::DARKCRAYFISH => color::hex("7c3325"),
+      Color::PICKPLANT => color::hex("dd534b"),
+      Color::PURPLE => color::hex("a15d6e"),
+      Color::LIGHTPURPLE => color::hex("d988bd"),
+      Color::FLESH => color::hex("f9caa4"),
+      Color::LIGHTGREEN => color::hex("556e46"),
+      Color::MINT => color::hex("b8cbaa"),
+      Color::MEGABLUE => color::hex("3451a4"),
+      Color::LIGHTMEGA => color::hex("6f9ae8"),
+      Color::GRAY => color::hex("ddd5ca"),
+      Color::MARSHYELLOW => color::hex("fac30a"),
+      Color::PURPLEGRAY => color::hex("9e8194"),
+      Color::OLIVE => color::hex("313017"),
+      Color::BROWNOLIVE => color::hex("776d41"),
+      Color::YELLOWOLIVE => color::hex("a9b445")
   	}
 }
 
@@ -139,10 +192,11 @@ impl Duck {
     }
 
     match (self.the_color, key) {
-      (Color::RED, Key::Space) =>
+
+      (Color::CRAYFISH, Key::Space) =>
             self.the_color = Color::GREEN,
       (Color::GREEN, Key::Space) => 
-            self.the_color = Color::RED,
+            self.the_color = Color::CRAYFISH,
       _ => {}
     }
   }
