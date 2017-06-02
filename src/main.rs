@@ -7,6 +7,7 @@ use piston::window::WindowSettings;
 use piston::event_loop::*;
 use piston::input::*;
 use graphics::color as color;
+use graphics::Graphics as Graphics;
 use glutin_window::GlutinWindow as Window;
 use opengl_graphics::{ GlGraphics, OpenGL };
 
@@ -121,7 +122,9 @@ pub struct Game {
 
 impl Duck {
 
-  fn render(&mut self, c: graphics::Context, gl: &mut GlGraphics) {
+  fn draw<G>(&mut self, c: graphics::Context, gl: &mut G)
+    where G: Graphics 
+  {
     use graphics::{ Transformed, polygon };
     let rotation = self.rotation;
     let (x, y) = (self.x, self.y);
@@ -211,9 +214,9 @@ impl Game {
 
       self.gl.draw(args.viewport(), |c, gl| {
           //Clear the screen
-          clear(get_color(Color::BLUE), gl);
+          clear(get_color(Color::MEGABLUE), gl);
 
-          momma_duck.render(c, gl);
+          momma_duck.draw(c, gl);
       });
   }
 
