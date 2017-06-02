@@ -266,7 +266,7 @@ fn main() {
     rotation_rate: 2.0,
     x: x,
     y: y,
-    the_color: Color::BROWN,
+    the_color: Color::LIGHTBROWN,
     acceleration: 70.0,
     //These are points of a polygon
     graphics: [[10.0, 10.0], [-10.0, 10.0,], [-10.0, -10.0], [10.0, -10.0]],
