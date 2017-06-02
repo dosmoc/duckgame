@@ -47,40 +47,40 @@ enum Color {
 }
 
 fn get_color(the_color: Color) -> [f32; 4] {
-  	match the_color {
-      Color::BLACK => color::hex("000000"),
-      Color::MEDIUMGRAY => color::hex("cab3ba"),
-      Color::WHITE => color::hex("fefefe"),
-      Color::CRAYFISH => color::hex("c6513d"),
-      Color::LIGHTPICKLEPLANT => color::hex("d78581"),
-      Color::BROWN => color::hex("5b3d15"),
-      Color::LIGHTBROWN => color::hex("b17031"),
-      Color::ORANGE => color::hex("fb9359"),
-      Color::YELLOW => color::hex("f1db5b"),
-      Color::DARKGREEN => color::hex("2c373f"),
-      Color::GREEN => color::hex("70803d"),
-      Color::SEAFOAM => color::hex("c5d077"),
-      Color::DARKBLUE => color::hex("1c2438"),
-      Color::BLUE => color::hex("3d4762"),
-      Color::LIGHTBLUE => color::hex("5b8fd8"),
-      Color::BRIGHTBLUE => color::hex("afdbff"),
-      Color::DARKGRAY => color::hex("736561"),
-      Color::DARKCRAYFISH => color::hex("7c3325"),
-      Color::PICKPLANT => color::hex("dd534b"),
-      Color::PURPLE => color::hex("a15d6e"),
-      Color::LIGHTPURPLE => color::hex("d988bd"),
-      Color::FLESH => color::hex("f9caa4"),
-      Color::LIGHTGREEN => color::hex("556e46"),
-      Color::MINT => color::hex("b8cbaa"),
-      Color::MEGABLUE => color::hex("3451a4"),
-      Color::LIGHTMEGA => color::hex("6f9ae8"),
-      Color::GRAY => color::hex("ddd5ca"),
-      Color::MARSHYELLOW => color::hex("fac30a"),
-      Color::PURPLEGRAY => color::hex("9e8194"),
-      Color::OLIVE => color::hex("313017"),
-      Color::BROWNOLIVE => color::hex("776d41"),
-      Color::YELLOWOLIVE => color::hex("a9b445")
-  	}
+  match the_color {
+    Color::BLACK => color::hex("000000"),
+    Color::MEDIUMGRAY => color::hex("cab3ba"),
+    Color::WHITE => color::hex("fefefe"),
+    Color::CRAYFISH => color::hex("c6513d"),
+    Color::LIGHTPICKLEPLANT => color::hex("d78581"),
+    Color::BROWN => color::hex("5b3d15"),
+    Color::LIGHTBROWN => color::hex("b17031"),
+    Color::ORANGE => color::hex("fb9359"),
+    Color::YELLOW => color::hex("f1db5b"),
+    Color::DARKGREEN => color::hex("2c373f"),
+    Color::GREEN => color::hex("70803d"),
+    Color::SEAFOAM => color::hex("c5d077"),
+    Color::DARKBLUE => color::hex("1c2438"),
+    Color::BLUE => color::hex("3d4762"),
+    Color::LIGHTBLUE => color::hex("5b8fd8"),
+    Color::BRIGHTBLUE => color::hex("afdbff"),
+    Color::DARKGRAY => color::hex("736561"),
+    Color::DARKCRAYFISH => color::hex("7c3325"),
+    Color::PICKPLANT => color::hex("dd534b"),
+    Color::PURPLE => color::hex("a15d6e"),
+    Color::LIGHTPURPLE => color::hex("d988bd"),
+    Color::FLESH => color::hex("f9caa4"),
+    Color::LIGHTGREEN => color::hex("556e46"),
+    Color::MINT => color::hex("b8cbaa"),
+    Color::MEGABLUE => color::hex("3451a4"),
+    Color::LIGHTMEGA => color::hex("6f9ae8"),
+    Color::GRAY => color::hex("ddd5ca"),
+    Color::MARSHYELLOW => color::hex("fac30a"),
+    Color::PURPLEGRAY => color::hex("9e8194"),
+    Color::OLIVE => color::hex("313017"),
+    Color::BROWNOLIVE => color::hex("776d41"),
+    Color::YELLOWOLIVE => color::hex("a9b445")
+	}
 }
 
 fn window_dimensions(w: &Window) -> (f64, f64) {
@@ -94,17 +94,17 @@ fn window_dimensions(w: &Window) -> (f64, f64) {
 
 
 pub struct Duck {
-    rotation: f64, //Rotation for the square
-    rotation_rate: f64,
-    x: f64, //x coordinate of square
-    y: f64, //y coordinate of square
-    the_color: Color,
-    acceleration: f64, //does not change over time for now
-    graphics: [[f64; 2]; 4], //just a triangle for now
-    moving_forward: bool, 
-    moving_backward: bool, 
-    rotating_left: bool, 
-    rotating_right: bool
+  rotation: f64, //Rotation for the square
+  rotation_rate: f64,
+  x: f64, //x coordinate of square
+  y: f64, //y coordinate of square
+  the_color: Color,
+  acceleration: f64, //does not change over time for now
+  graphics: [[f64; 2]; 4], //just a triangle for now
+  moving_forward: bool, 
+  moving_backward: bool, 
+  rotating_left: bool, 
+  rotating_right: bool
 }
 
 pub struct Game {
